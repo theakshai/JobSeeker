@@ -10,6 +10,12 @@ namespace JobSeeker.Models
     public string Company {get;set;}
     public string Area {get;set;}
     public string Category {get;set;}
+
   }
+
+    public class JobManager
+    {
+
+    }
   
 }
