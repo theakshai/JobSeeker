@@ -13,9 +13,12 @@ namespace JobSeeker.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string? search)
         {
-            return View();
+            List<Job> jobs = search != null && search.Length > 0 ? JobManager.SearchJobs(search) 
+                : JobManager.GetAllJobs();
+            ViewBag.query = search;
+            return View(jobs);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
