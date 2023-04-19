@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-@model List<JobSeeker.Models.Job>
+
 
 <!DOCTYPE html>
 <html>
@@ -12,13 +12,5 @@
 </head>
 <body>
 
-    @if(Model.Count > 0)
-    {
-        @Html.Partial("_JobListPartial", Model)
-
-    }else
-    {
-        <div class="alert alert-warning">No jobs found for your query</div>
-    }
 </body>
 </html>

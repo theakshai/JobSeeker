@@ -2,17 +2,18 @@ using Microsoft.Data.SqlClient;
 
 namespace JobSeeker.Models
 {
-   
-  public class Job 
-  {
-    public int Id {get;set;}
-    public string Name {get;set;}
-    public string Description {get;set;}
-    public decimal  Salary {get;set;}
-    public string Company {get;set;}
-    public string Area {get;set;}
-    public string Category {get;set;}
 
+    public class Job
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Salary { get; set; }
+        public string Company { get; set; }
+        public string Area { get; set; }
+        public string Category { get; set; }
+
+        /*
     public Job(SqlDataReader reader)
         {
             Id = Convert.ToInt32(reader["Id"]);
@@ -81,5 +82,7 @@ namespace JobSeeker.Models
             return jobs;
         }
 
+    }
+        */
     }
 }
