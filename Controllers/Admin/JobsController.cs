@@ -20,8 +20,12 @@ namespace JobSeeker.Controllers.Admin
         }
 
         // GET: Jobs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? search)
         {
+            if(search!= null && search.Length > 0)
+            {
+                return  View( await _context.Job.Where(job => job.Name.Contains(search) || job.Company.Contains(search) || job.Area.Contains(search) || job.Category.Contains(search)).ToListAsync());
+            }
               return _context.Job != null ? 
                           View(await _context.Job.ToListAsync()) :
                           Problem("Entity set 'JobContext.Job'  is null.");
