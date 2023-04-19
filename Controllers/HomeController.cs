@@ -13,6 +13,11 @@ namespace JobSeeker.Controllers
             _logger = logger;
         }
 
+        public IActionResult Index()
+        {
+            return View();
+        }
+        /*
         public IActionResult Index(string? search)
         {
             List<Job> jobs = search != null && search.Length > 0 ? JobManager.SearchJobs(search) 
@@ -20,6 +25,7 @@ namespace JobSeeker.Controllers
             ViewBag.query = search;
             return View(jobs);
         }
+        */
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,3 +1,9 @@
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.Data;
+using System.Data;
+using JobSeeker.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace JobSeeker
 {
     public class Program
@@ -8,6 +14,7 @@ namespace JobSeeker
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<JobContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("JOB_PORTAL")));
 
             var app = builder.Build();
 
